@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="termprojectg1pluginssquad"
+            application="org.eclipse.e4.ui.workbench.swt.E4Application">
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/TermProject-G1-PluginsSquad/css/default.css">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="TermProject-G1-PluginsSquad.fragment"
+         point="org.eclipse.e4.workbench.model">
+      <fragment
+            uri="fragment.e4xmi">
+      </fragment>
+   </extension>
+
+</plugin>
