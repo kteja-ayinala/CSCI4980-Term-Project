@@ -11,7 +11,9 @@ public class GClassNode extends GNode {
       super(id, name, parent);
    }
 
-   public String getPkgName() {
+  
+
+public String getPkgName() {
       return this.pkgName;
    }
 

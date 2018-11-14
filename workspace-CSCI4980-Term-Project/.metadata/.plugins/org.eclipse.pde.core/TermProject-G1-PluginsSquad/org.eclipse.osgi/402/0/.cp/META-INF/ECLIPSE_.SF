@@ -1,0 +1,97 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: OTMF7Zc505POKAhbIwnDEuuTR7WVt
+ JnjT5VAjfob27A=
+SHA-256-Digest-Manifest: ZR1B1hV3INt1sv39zNQpWbEqphQJGyFLVYqpddCTXBs=
+Created-By: 1.8.0_102 (Oracle Corporation)
+
+Name: plugin.xml
+SHA-256-Digest: gxV6jBtigijMs7Qk6DSJDdKRjKRrD7bvCPiMnz9UPHg=
+
+Name: org/eclipse/rap/tools/intro/internal/ErrorUtil$1.class
+SHA-256-Digest: 2XGmWCbdbhsBupRch+Gj7bNarM6FKjLVPCDqasiPyY0=
+
+Name: org/eclipse/rap/tools/intro/internal/target/messages.properties
+SHA-256-Digest: 65x+DU1eEVXUttvQQPGl2tnHy0CbIaxoY3ZkAXyRZbw=
+
+Name: org/eclipse/rap/tools/intro/internal/target/TargetProvider.class
+SHA-256-Digest: zv38BIPyybpqUdAoL3HUSlStErvysUINI/ukvGKUtQs=
+
+Name: org/eclipse/rap/tools/intro/internal/target/InstallRAPTargetHand
+ ler$2.class
+SHA-256-Digest: 8XlRnoJkQuZkgN+7yO4KIgWLAzS6FJqcBoCnMIl2DV4=
+
+Name: org/eclipse/rap/tools/intro/internal/target/InstallTargetDialog.
+ class
+SHA-256-Digest: OOj3I+TVgPsg0EgRVM9wWF27cWba5NL7ZIYXH4cWnrM=
+
+Name: org/eclipse/rap/tools/intro/internal/target/IntroMessages.class
+SHA-256-Digest: 1LsZNCa/QEhuz7kk5oG+aDLta9LdeeD9I+GWg1L56VU=
+
+Name: intro/graphics/quick_tour.gif
+SHA-256-Digest: xNqKf68W+BcrsM3Ja6iSsUEzC8Z4vYcBSx7L5skPh0w=
+
+Name: org/eclipse/rap/tools/intro/internal/ErrorUtil.class
+SHA-256-Digest: Ifh2q+27AqXLdvucVsb9yB/d4T4OFxZnZzE1Oxsi/Jk=
+
+Name: plugin.properties
+SHA-256-Digest: RqrWhFuhfhdkAw8vMA8+Hb9rF2Eh3xwLzlxPMyWvi5A=
+
+Name: intro/graphics/extract_target.gif
+SHA-256-Digest: ZkC+sBEmXltsPpF56uCGt9n3dossJ1yrjrqZy+nDrBc=
+
+Name: org/eclipse/rap/tools/intro/internal/target/InstallTargetDialog$
+ 1.class
+SHA-256-Digest: qsYpLUGw5D7fOthmLXzPcpIp+/EEJs6MUben8Sr16l8=
+
+Name: about.html
+SHA-256-Digest: 300AkxUKECbLMalPDbWq+a/lsdqmD1miSQPWtpfEfLk=
+
+Name: cheatsheets/getting-started.xml
+SHA-256-Digest: n4P2gtAUiVbDHKTcxge6Q4MFoc4vS+CyuMkw/jzr23I=
+
+Name: org/eclipse/rap/tools/intro/internal/target/InstallRAPTargetHand
+ ler$1.class
+SHA-256-Digest: VNyOt9UQQPxJlL5EJ3y1AZtiYf7yBApnRxcaSV/FeDE=
+
+Name: intro/css/overview.css
+SHA-256-Digest: kxnu5D0Lii3vej2DeTvY7dxzPY3i2QSADmlyGLjPrr0=
+
+Name: org/eclipse/rap/tools/intro/internal/target/InstallRAPTargetActi
+ on.class
+SHA-256-Digest: TWBOzRPl71K+7X2sNjRnbAuuUQTG4HMLP9ynhCG3Pes=
+
+Name: org/eclipse/rap/tools/intro/internal/target/TargetSwitcher.class
+SHA-256-Digest: nYmMFOP/o3JUaaSVfcBXJ/rH50UzhtQD4Iq/4566oL4=
+
+Name: intro/graphics/rap.png
+SHA-256-Digest: VjVS8Q6QxHKxYsG8jDw/+E6bL+/Wc8L5WgYGTVPH82E=
+
+Name: org/eclipse/rap/tools/intro/internal/target/InstallRAPTargetHand
+ ler.class
+SHA-256-Digest: 8HaoONUA5Xu3Bp04AUuuKxaA5AmUNGAw59+xWB+bsOs=
+
+Name: intro/graphics/tu_checkout48.gif
+SHA-256-Digest: mxP2s6TjbDvtFn/NPYFFLooSHSm4yI5paep9yyBck4M=
+
+Name: intro/overviewExtensionContent.xml
+SHA-256-Digest: 4HVCpS28ATjKesQ01GZRU3F9pZWp8fK+XWkEsr1SUDk=
+
+Name: org/eclipse/rap/tools/intro/internal/commands/LaunchRAPApplicati
+ on$1.class
+SHA-256-Digest: 9N91/C9/utKN+TduQB9xXO/o2jcLZU1vYUudpn+IvoA=
+
+Name: META-INF/maven/org.eclipse.rap/org.eclipse.rap.tools.intro/pom.x
+ ml
+SHA-256-Digest: Uh23jPO6gyWrpdu4V3UOwqwN6N2y0amnrCZMU2IO1+E=
+
+Name: org/eclipse/rap/tools/intro/internal/IntroPlugin.class
+SHA-256-Digest: zMsf/aQihdKKVmVEU1QMP4cUp7a315t48IFVvhNn5TU=
+
+Name: org/eclipse/rap/tools/intro/internal/commands/LaunchRAPApplicati
+ on.class
+SHA-256-Digest: C+UD84Oi5kL9C4B9ECVcmXMG8UJqPjpKxq6rRlRbnRc=
+
+Name: META-INF/maven/org.eclipse.rap/org.eclipse.rap.tools.intro/pom.p
+ roperties
+SHA-256-Digest: r2XFpYFLC5ZiKDGKAoWCWY4s/DYqf4+BXYLeaS/OyBI=
+
