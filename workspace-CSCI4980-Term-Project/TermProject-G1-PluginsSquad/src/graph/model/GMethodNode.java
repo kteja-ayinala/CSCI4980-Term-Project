@@ -39,6 +39,7 @@ public class GMethodNode extends GNode {
    public String getClassName() {
       return className;
    }
+   
 
    public boolean isParent(GClassNode n) {
       boolean eqClassName = this.className.equals(n.getName());
