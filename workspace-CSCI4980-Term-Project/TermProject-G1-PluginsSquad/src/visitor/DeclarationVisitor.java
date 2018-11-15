@@ -11,18 +11,15 @@ import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.IMethodBinding;
 import org.eclipse.jdt.core.dom.IPackageBinding;
 import org.eclipse.jdt.core.dom.ITypeBinding;
-import org.eclipse.jdt.core.dom.IVariableBinding;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.PackageDeclaration;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
-import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 
 import graph.model.GClassNode;
 import graph.model.GConnection;
 import graph.model.GMethodNode;
 import graph.model.GNode;
 import graph.model.GPackageNode;
-import graph.model.GVariableNode;
 import graph.provider.GModelProvider;
 
 public class DeclarationVisitor extends ASTVisitor {
@@ -95,33 +92,6 @@ public class DeclarationVisitor extends ASTVisitor {
 		return addNode(n);
 	}
 
-	@Override
-	public boolean visit(VariableDeclarationFragment vDecl) {
-		GVariableNode variableNode = (GVariableNode) insertVariableNode(vDecl);
-		GNode methodNode = GModelProvider.instance().getNodeMap().get(variableNode.getParent());
-		if (methodNode == null) {
-			throw new RuntimeException();
-		}
-		addConnection(methodNode, variableNode, vDecl.getStartPosition());
-		return super.visit(vDecl);
-	}
-
-	private GNode insertVariableNode(VariableDeclarationFragment vDecl) {
-		IVariableBinding vBinding = vDecl.resolveBinding();
-		IMethodBinding rBinding = vBinding.getDeclaringMethod();
-		ITypeBinding typeBinding = rBinding.getDeclaringClass();
-		String prjName = typeBinding.getPackage().getJavaElement().getJavaProject().getElementName();
-		String pkgName = typeBinding.getPackage().getName();
-		String className = typeBinding.getClass().getName();
-		String methodName = vBinding.getName();
-
-		String variableName = vDecl.getName().getFullyQualifiedName();
-		String parent = prjName + "." + pkgName + "." + className + "." + methodName;
-		String id = parent + "." + variableName;
-		GVariableNode n = new GVariableNode(id, variableName, parent);
-		n.setPrjName(prjName).setPkgName(pkgName).setClassName(className).setMethodName(methodName);
-		return addNode(n);
-	}
 
 	private void addConnection(GNode srcNode, GNode dstNode, int offset) {
 		String conId = srcNode.getId() + dstNode.getId();
