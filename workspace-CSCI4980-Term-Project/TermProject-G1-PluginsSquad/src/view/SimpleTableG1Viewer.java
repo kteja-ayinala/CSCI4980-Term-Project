@@ -1,8 +1,4 @@
-
 package view;
-
-import java.util.EventObject;
-import java.util.List;
 
 import javax.annotation.PostConstruct;
 
@@ -23,6 +19,7 @@ import org.eclipse.zest.layouts.LayoutStyles;
 import org.eclipse.zest.layouts.algorithms.RadialLayoutAlgorithm;
 import org.eclipse.zest.layouts.algorithms.TreeLayoutAlgorithm;
 
+import analysis.MethodAnalyzer;
 import analysis.MoveMethodAnalyzer;
 import analysis.ProjectAnalyzer;
 import graph.model.GClassNode;
@@ -42,7 +39,8 @@ public class SimpleTableG1Viewer {
 	private GraphViewer gViewer;
 	private int layout = 0;
 	private Menu mPopupMenu = null;
-	private MenuItem menuItemMoveMethod = null, menuItemRefresh = null;
+	private MenuItem menuItemMoveMethod = null, menuItemRefresh = null, menuItemShowNodeMethod = null;
+	
 	private GraphNode selectedSrcGraphNode = null, selectedDstGraphNode = null;
 	private GraphNode prevSelectedDstGraphNode = null;
 
@@ -72,6 +70,38 @@ public class SimpleTableG1Viewer {
 		menuItemRefresh = new MenuItem(mPopupMenu, SWT.CASCADE);
 		menuItemRefresh.setText("Refresh");
 		addSelectionListenerMenuItemRefresh();
+		
+		menuItemShowNodeMethod = new MenuItem(mPopupMenu, SWT.CASCADE);
+		menuItemShowNodeMethod.setText("Open Node in New View");
+		addSelectionListenermenuItemShowMethodVariables();
+
+	}
+
+	private void addSelectionListenermenuItemShowMethodVariables() {
+		SelectionListener menuItemListenerMoveMethod = new SelectionListener() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if(isNodesSelected()) {
+					MethodAnalyzer methodAnalyzer = new MethodAnalyzer();
+					methodAnalyzer.setMethod((GMethodNode) selectedGMethodNode);
+					methodAnalyzer.analyze();
+					update();
+				}
+				
+				
+			}
+				private boolean isNodesSelected() {
+					return selectedGMethodNode != null && selectedGMethodNode.getNodeType().equals(GNodeType.UserSelection);
+							
+				}
+
+				@Override
+				public void widgetDefaultSelected(SelectionEvent e) {
+				}
+			
+		};
+		menuItemShowNodeMethod.addSelectionListener(menuItemListenerMoveMethod);
+
 	}
 
 	private void addMouseListenerGraphViewer() {
