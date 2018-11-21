@@ -95,7 +95,7 @@ public class DeclarationVisitor extends ASTVisitor {
 		return addNode(n);
 	}
 
-	@Override
+/*	@Override
 	public boolean visit(VariableDeclarationFragment vDecl) {
 		GVariableNode variableNode = (GVariableNode) insertVariableNode(vDecl);
 		GNode methodNode = GModelProvider.instance().getNodeMap().get(variableNode.getParent());
@@ -121,7 +121,7 @@ public class DeclarationVisitor extends ASTVisitor {
 		GVariableNode n = new GVariableNode(id, variableName, parent);
 		n.setPrjName(prjName).setPkgName(pkgName).setClassName(className).setMethodName(methodName);
 		return addNode(n);
-	}
+	}*/
 
 	private void addConnection(GNode srcNode, GNode dstNode, int offset) {
 		String conId = srcNode.getId() + dstNode.getId();
