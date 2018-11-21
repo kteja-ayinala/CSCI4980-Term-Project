@@ -14,6 +14,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IField;
+import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
@@ -95,32 +96,35 @@ public class MethodAnalyzer {
    }
 
    public void analyzeCompilationUnit(ICompilationUnit[] iCompilationUnits) throws JavaModelException {
-      // =============================================================
-      // 3rd step: ICompilationUnits
-      // =============================================================
-      for (ICompilationUnit iUnit : iCompilationUnits) {
-         CompilationUnit compilationUnit = parse(iUnit);
-         if (iUnit.getElementName().equals(method.getClassName() +".java")) {
-        	          
-         VariableVisitor declVisitor = new VariableVisitor();
-         compilationUnit.accept(declVisitor);
-      };
-      
-      
-      }
-      
+	   // =============================================================
+	   // 3rd step: ICompilationUnits
+	   // =============================================================
+	   for (ICompilationUnit iUnit : iCompilationUnits) {
+		   
+		   if (iUnit.getElementName().equals(method.getClassName() +".java")) {
+			  /* for (IJavaElement elem : iUnit.getResource().getChildren()) {
+				   if (elem.getElementName().equals(method)) {*/
+			   IType type = iUnit.findPrimaryType();
+	           IMethod[] methods = type.getMethods();
+	            for(IMethod imethod : methods) {
+	            	if (imethod.getElementName().equals(method.getName()) ) {
+	            	   CompilationUnit compilationUnit = parse(iUnit);
+					   VariableVisitor declVisitor = new VariableVisitor();
+					   compilationUnit.accept(declVisitor);
+				   }
+			   }
+		   }
+	   };
+
+
    }
 
-   public boolean visit() {
-	   
-	   
-	   
-	   
-	   
-	   
+
+
+public boolean visit() {
 	return false;
-	   
-   }
+
+}
    
    
    public String getPrjName() {

@@ -71,13 +71,15 @@ public class VariableVisitor extends ASTVisitor {
 
 	@Override
 	public boolean visit(MethodDeclaration methodDecl) {
-		
+		if(methodDecl.getName().toString().equals("mb1")) {
 		GMethodNode methodNode = (GMethodNode) insertMethodNode(methodDecl);
+		
 		GNode typeNode = GModelProvider.instance().getNodeMap().get(methodNode.getParent());
 		if (typeNode == null) {
 			throw new RuntimeException();
 		}
 		addConnection(typeNode, methodNode, methodDecl.getStartPosition());
+		}
 		return super.visit(methodDecl);
 	}
 
