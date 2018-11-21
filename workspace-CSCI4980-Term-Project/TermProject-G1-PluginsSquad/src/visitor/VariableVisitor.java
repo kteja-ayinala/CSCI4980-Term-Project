@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * @(#) MethodVisitor.java
  *
@@ -135,6 +136,51 @@ public class VariableVisitor extends ASTVisitor {
 	}
 
 
+=======
+package visitor;
+
+import org.eclipse.jdt.core.dom.ASTVisitor;
+import org.eclipse.jdt.core.dom.MethodDeclaration;
+import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
+
+import graph.model.GConnection;
+import graph.model.GMethodNode;
+import graph.model.GNode;
+import graph.model.GVariableNode;
+import graph.provider.GModelProvider;
+
+public class VariableVisitor extends ASTVisitor {
+	GMethodNode methodNode;
+
+	public VariableVisitor(GMethodNode method) {
+		this.methodNode = method;
+	}
+
+	@Override
+	public boolean visit(MethodDeclaration md) {
+		if (md.getName().toString().equals(methodNode.getName())) {
+			md.accept(new ASTVisitor() {
+				public boolean visit(VariableDeclarationFragment vDecl) {
+
+					String prjName = methodNode.getPrjName();
+					String pkgName = methodNode.getPkgName();
+					String clsName = methodNode.getClassName();
+					String methodName = methodNode.getName();
+					String vName = vDecl.getName().getFullyQualifiedName();
+					String id = prjName + "." + pkgName + "." + clsName + "." + methodName + "." + vName;
+					GVariableNode vNode = new GVariableNode(id, vDecl.getParent().toString(),
+							prjName + "." + pkgName + "." + clsName + "." + methodName);
+					addNode(vNode);
+					addNode(methodNode);
+					addConnection(methodNode, vNode, vDecl.getStartPosition());
+					return false;
+				}
+			});
+		}
+		return false;
+	}
+
+>>>>>>> 0c01a9df5726bee8cd1db2f60d3c3ae29d47b0a2
 	private void addConnection(GNode srcNode, GNode dstNode, int offset) {
 		String conId = srcNode.getId() + dstNode.getId();
 		String conLabel = "offset: " + offset;

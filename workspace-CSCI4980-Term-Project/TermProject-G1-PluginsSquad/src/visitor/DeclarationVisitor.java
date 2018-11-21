@@ -11,18 +11,15 @@ import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.IMethodBinding;
 import org.eclipse.jdt.core.dom.IPackageBinding;
 import org.eclipse.jdt.core.dom.ITypeBinding;
-import org.eclipse.jdt.core.dom.IVariableBinding;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.PackageDeclaration;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
-import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 
 import graph.model.GClassNode;
 import graph.model.GConnection;
 import graph.model.GMethodNode;
 import graph.model.GNode;
 import graph.model.GPackageNode;
-import graph.model.GVariableNode;
 import graph.provider.GModelProvider;
 
 public class DeclarationVisitor extends ASTVisitor {
@@ -95,6 +92,7 @@ public class DeclarationVisitor extends ASTVisitor {
 		return addNode(n);
 	}
 
+<<<<<<< HEAD
 /*	@Override
 	public boolean visit(VariableDeclarationFragment vDecl) {
 		GVariableNode variableNode = (GVariableNode) insertVariableNode(vDecl);
@@ -122,6 +120,8 @@ public class DeclarationVisitor extends ASTVisitor {
 		n.setPrjName(prjName).setPkgName(pkgName).setClassName(className).setMethodName(methodName);
 		return addNode(n);
 	}*/
+=======
+>>>>>>> 0c01a9df5726bee8cd1db2f60d3c3ae29d47b0a2
 
 	private void addConnection(GNode srcNode, GNode dstNode, int offset) {
 		String conId = srcNode.getId() + dstNode.getId();

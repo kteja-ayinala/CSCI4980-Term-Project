@@ -164,6 +164,5 @@ public class MoveMethodAnalyzer {
 		} else {
 			System.out.println("[DBG] Please select class and method nodes to move.");
 		}
-//		UtilMsg.openWarning("TODO: should implement it as a part of the term project.");
 	}
 }

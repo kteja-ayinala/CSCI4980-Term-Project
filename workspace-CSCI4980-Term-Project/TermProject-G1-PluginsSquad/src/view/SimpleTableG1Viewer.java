@@ -1,8 +1,4 @@
-
 package view;
-
-import java.util.EventObject;
-import java.util.List;
 
 import javax.annotation.PostConstruct;
 
@@ -77,20 +73,31 @@ public class SimpleTableG1Viewer {
 		
 		menuItemShowNodeMethod = new MenuItem(mPopupMenu, SWT.CASCADE);
 		menuItemShowNodeMethod.setText("Open Node in New View");
+<<<<<<< HEAD
 		addSelectionListenermenuItemShowNodeMethod();
 
 	}
 
 	private void addSelectionListenermenuItemShowNodeMethod() {
+=======
+		addSelectionListenermenuItemShowMethodVariables();
+
+	}
+
+	private void addSelectionListenermenuItemShowMethodVariables() {
+>>>>>>> 0c01a9df5726bee8cd1db2f60d3c3ae29d47b0a2
 		SelectionListener menuItemListenerMoveMethod = new SelectionListener() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if(isNodesSelected()) {
 					MethodAnalyzer methodAnalyzer = new MethodAnalyzer();
 					methodAnalyzer.setMethod((GMethodNode) selectedGMethodNode);
+<<<<<<< HEAD
 					methodAnalyzer.setClassNode((GClassNode) selectedGClassNode);
 					//methodAnalyzer.setPkgName(selectedGClassNode.getParent());
 					//methodAnalyzer.setPrjName(selectedGClassNode.getParent());
+=======
+>>>>>>> 0c01a9df5726bee8cd1db2f60d3c3ae29d47b0a2
 					methodAnalyzer.analyze();
 					update();
 				}
