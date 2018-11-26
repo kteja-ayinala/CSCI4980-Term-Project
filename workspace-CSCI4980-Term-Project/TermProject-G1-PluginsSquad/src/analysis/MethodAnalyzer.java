@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 /*
- * @(#) ASTAnalyzer.java
- *
  * Copyright 2015-2018 The Software Analysis Laboratory
  * Computer Science, The University of Nebraska at Omaha
  * 6001 Dodge Street, Omaha, NE 68182.
